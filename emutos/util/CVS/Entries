@@ -1,0 +1,20 @@
+/.cvsignore/1.1/Sun Nov 18 19:51:19 2001//
+/boot.c/1.6/Sat Aug  6 13:00:34 2011//
+/bootasm.S/1.5/Mon Dec 26 16:12:07 2011//
+/bootsect.S/1.5/Tue Jun 19 20:35:47 2012//
+/date.c/1.5/Fri Sep 16 22:23:12 2011//
+/doprintf.c/1.9/Sat Nov 19 11:29:37 2011//
+/dumpkbd.c/1.6/Fri Sep 16 22:23:12 2011//
+/intmath.c/1.6/Fri May 18 16:05:25 2012//
+/langs.h/1.5/Sat Sep 10 17:23:38 2011//
+/memmove.S/1.7/Mon Dec 26 16:12:07 2011//
+/memset.S/1.7/Mon Dec 26 16:12:07 2011//
+/minicrt.S/1.5/Mon Dec 26 16:12:07 2011//
+/miscasm.S/1.15/Tue Jun  5 20:16:01 2012//
+/nls.c/1.13/Tue May 29 23:52:18 2012//
+/nlsasm.S/1.14/Wed May  9 22:38:27 2012//
+/setjmp.S/1.4/Mon Dec 26 16:12:07 2011//
+/string.c/1.9/Fri Aug 31 22:36:00 2012//
+/stringasm.S/1.7/Mon Dec 26 16:12:07 2011//
+/uncompr.S/1.5/Mon Dec 26 16:12:07 2011//
+D

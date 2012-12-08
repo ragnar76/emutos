@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta content="EmuTOS team" name="Author" />
+  <meta content="EmuTOS News" http-equiv="description" />
+  <meta content="EmuTOS, news, atari, tos, emulator" http-equiv="keywords" />
+  <link href="../default.css" type="text/css" rel="stylesheet" />
+  <link href="../favicon.ico" rel="shortcut icon" />
+  <title>EmuTOS - News</title>
+</head>
+
+<body>
+<div class="all">
+<div class="header">
+  <h1>EmuTOS - News</h1>
+</div>
+
+<div class="middle">
+<table width="100%">
+  <tbody>
+    <tr>
+      <th>
+      <a href="index.html">About</a> &nbsp;
+      News &nbsp;
+      <a href="features.html">Features</a> &nbsp;
+      <a href="history.html">History</a> &nbsp;
+      <a href="screen.html">Screenshots</a> &nbsp;
+      <a href="download.html">Download</a> &nbsp;
+      <a href="links.html">Links</a>
+      <br />
+      </th>
+    </tr>
+  </tbody>
+</table>
+
+<!--#exec cmd="wget -O - 'http://sourceforge.net/export/projnews.php?group_id=36560&limit=20&flat=0&show_summaries=1' | sed 's,http://sourceforge.net/forum/forum.php?forum_id=[0-9]*,http://sourceforge.net/news/?group_id=36560,g' " -->
+
+</div>
+
+
+<div class="footer">
+<a href="http://sourceforge.net"><img alt="SourceForge.net Logo" height="31"
+ width="88" src="http://sourceforge.net/sflogo.php?group_id=36560&amp;type=1" /></a>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+#
+# this file contains the name of languages that will
+# be generated in file langs.c by bug make.
+# each line should be of the form
+#   
+#   xy charset
+#
+# where xy is a lowercase two-letter language name,
+# and charset is the name of the destination charset 
+#
+
+fr atarist
+de atarist
+fi atarist
+it atarist
+cs latin2
+es latin9
+
+# FIXME: What about greek?
+gr latin1
+
+ru russian-atarist

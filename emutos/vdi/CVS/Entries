@@ -1,0 +1,23 @@
+/.cvsignore/1.1/Sat Jun  5 08:12:33 2010//
+/vdi_asm.S/1.11/Sat Nov 19 11:29:37 2011//
+/vdi_asm.h/1.2/Sat Aug 14 14:52:28 2004//
+/vdi_bezier.c/1.10/Mon Jun 18 22:42:16 2012//
+/vdi_blit.S/1.11/Sat Nov 19 11:29:37 2011//
+/vdi_col.c/1.10/Mon Oct  1 18:12:02 2012//
+/vdi_col.h/1.2/Mon May 17 21:51:51 2010//
+/vdi_control.c/1.19/Fri Jun 29 21:12:33 2012//
+/vdi_defs.h/1.29/Thu Sep 13 20:46:32 2012//
+/vdi_esc.c/1.7/Sat Nov 19 11:29:37 2011//
+/vdi_fill.c/1.22/Thu May  3 17:22:09 2012//
+/vdi_gdp.c/1.14/Mon Jun 18 22:42:16 2012//
+/vdi_input.c/1.4/Sat Nov 19 11:29:37 2011//
+/vdi_line.c/1.32/Thu May  3 00:04:12 2012//
+/vdi_main.c/1.14/Sat Nov 19 11:29:37 2011//
+/vdi_marker.c/1.6/Sat Nov 19 11:29:37 2011//
+/vdi_misc.c/1.11/Sat Nov 19 11:29:37 2011//
+/vdi_mouse.c/1.25/Sat Nov 19 11:29:37 2011//
+/vdi_raster.c/1.13/Wed Sep  5 22:36:04 2012//
+/vdi_tblit.S/1.12/Sat Nov 19 11:29:37 2011//
+/vdi_tblit_cf.S/1.5/Sat Nov 19 22:08:33 2011//
+/vdi_text.c/1.24/Thu Sep 13 20:46:32 2012//
+D

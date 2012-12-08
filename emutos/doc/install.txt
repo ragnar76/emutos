@@ -1,0 +1,141 @@
+Installing:
+
+You will need a (cross-)GCC toolchain for TOS/MiNT.
+Currently, the only supported one is Vincent Rivière's m68k-atari-mint tools:
+http://vincent.riviere.free.fr/soft/m68k-atari-mint/
+Other toolchains, such as the old one from SpareMiNT, may also work, too.
+You will also need GNU make (tested with make 3.82.90).
+
+Building EmuTOS
+===============
+
+To build, first do:
+
+    make help
+
+This will display the list of all possible targets.
+
+To build the standard etos512k.img, do
+
+    make 512
+
+To build EmuTOS for a different country (changes the language and the
+keyboard), do
+
+    make 512 COUNTRY=en
+or
+    make 512 COUNTRY=fr
+or
+    make 512 COUNTRY=de
+
+NOTE: by specifying COUNTRY=xx, all countries are included in the binary, 
+but a flag in the TOS header will indicate country 'xx'. If, however, the 
+EmuTOS image is booted on an emulator featuring NVRAM emulation (such as
+ARAnyM), the country number in the NVRAM will override that setting of the 
+country in the TOS header.
+
+Finally, some settings can be configured in the file include/config.h.
+
+A complete list of targets
+==========================
+
+EmuTOS binaries
+---------------
+
+192     etos192k.img, EmuTOS ROM padded to size 192 kB (starting at 0x00fc0000)
+256     etos256k.img, EmuTOS ROM padded to size 256 kB (starting at 0x00e00000)
+512     etos512k.img, EmuTOS ROM padded to size 512 kB (starting at 0x00e00000)
+aranym  emutos-aranym.img, suitable for ARAnyM
+firebee emutosfb.s19, to be flashed on the FireBee
+ram     ramtos.img + boot.prg, a RAM tos
+flop    emutos.st, a bootable floppy with RAM tos
+cart    etoscart.img, EmuTOS as a diagnostic cartridge
+
+Binary targets modifiers
+------------------------
+
+nothing       same as COUNTRY=us
+COUNTRY=xx    all countries in the binary, country xx being the default
+UNIQUE=xx     a smaller binary with only support for country xx
+DEF='-DSOMEDEFINE=value' 
+              used to override the default settings from include/config.h.
+              WARNING: do make clean first.
+
+Utility targets
+---------------
+
+fd0           dd emutos.st on a floppy (linux-specific)
+
+Debug targets
+-------------
+
+dsm     dsm.txt, an edited disassembly of emutos.img
+fdsm    fal_dsm.txt, like above, but for 0x00e00000 ROMs
+*.dsm   disassembly of any .c or almost any .img file
+
+CVS-related targets
+-------------------
+
+depend       generates dependencies
+clean        cleans all generated files
+distclean    as clean + deletes also some temporary editor files
+cvsready     ensure the files have a proper, canonic, format for CVS
+checkindent  try 'indent' without altering the files
+indent       indent all files - never done yet :-(
+
+Release-related targets
+-------------------
+
+all192  all 192 kB images
+all256  all 256 kB images
+allbin  all 192 kB, 256 kB and 512 kB images
+release build the release archives into release-archives
+
+
+STonX-specific notes
+=======================
+
+EmuTOS now needs no change in STonX any longer. It will run on a
+normal STonX. 
+
+But, if you want to see debugging output in STonX, you need to do two
+things:
+
+1. implement a write_native function in gemdos.c of STonX:
+
+    /* Print string from emulated side */
+    void write_native(char * addr)
+    {
+        char buf[1024];
+        int n;
+
+        for(n = 0 ; n < 1023 ; n++) {  /* Fill string char by char */
+            if ( (buf[n]=LM_UB(MEM(addr++))) == 0) break;
+        }
+        buf[1023] = 0;
+        fprintf(stderr,"%s", buf);
+    }
+
+    void call_native(UL as, UL func)
+    {
+    #if 0
+        fprintf(stderr,"Calling native %d\n",func);
+    #endif
+        switch (func)
+        {
+        case 0: /* Get the address, where string begins*/
+            write_native((char *)LM_UL(MEM(as)));
+            break;
+        case 1:
+    ...
+
+(STonC release 0.8.0 and later already has this function)
+
+2. Switch on the debugging output by setting, in include/config.h, the
+   parameter STONX_NATIVE_PRINT to 1 before building EmuTOS.
+
+
+Have success!
+
+-- 
+The EmuTOS team

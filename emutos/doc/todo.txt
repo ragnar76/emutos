@@ -1,0 +1,37 @@
+BIOS/XBIOS
+- implement missing XBIOS calls
+  (e.g. the Blitter functions)
+- reduce the number of 'extern' in .c files
+- check that RAM disks work
+- misc. TODOs in floppy.c
+- check that VEC_CRITICALERR (0x101) is called when the BIOS encounters errors
+- improve Mediach()
+- implement full XHDI 1.30
+- loop calibration needed for various delays in Centronics and DMA ports
+- make EmuTOS MMU aware and let it set up correct MMU tree
+
+BDOS (GEMDOS)
+- should hitting control-c terminate the current process? if so, how?
+- move mem-only routines out of proc.c into umem.c or iumem.c
+
+Internationalization
+- bugs in tools/bug.c; more things should be configurable on the command line
+
+VDI
+- The linemask for dashed lines is not calculated correct, depending on 
+  the internal calculations of increase in x direction, like in original TOS.
+- vs_color and vq_color don't work with TT shifter and Falcon Videl yet.
+
+AES
+- Check if all strings in desk_rsc.c and gem_rsc.c are fully ROM save (the
+  TEDINFO strings etc).
+
+DESK
+- Add a dialog for configuring the NVRAM (keyboard, languages, ...)
+- Support for loading DESKTOP.INF (needs remapping of the icon indexes)
+
+CLI
+- use extended argv specification in EmuCON
+- EmuCON should allow 'exit' in .BAT scripts?
+- Input/Output redirection does not work well (problems with spaces after
+  the ">" for example).
